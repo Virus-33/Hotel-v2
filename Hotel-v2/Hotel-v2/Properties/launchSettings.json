@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Hotel-v2": {
+      "commandName": "Project",
+      "commandLineArgs": "Rooms.txt Journal.txt"
+    }
+  }
+}
