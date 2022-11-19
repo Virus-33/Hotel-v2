@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
+
 namespace HotelLib_v1._0
 {
     public static class MessageBlock

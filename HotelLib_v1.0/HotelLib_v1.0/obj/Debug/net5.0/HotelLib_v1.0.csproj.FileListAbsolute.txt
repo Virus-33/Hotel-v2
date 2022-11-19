@@ -22,3 +22,15 @@ C:\Users\kuluevdv\Desktop\HotelLib_v1.0\HotelLib_v1.0\obj\Debug\net5.0\HotelLib_
 C:\Users\kuluevdv\Desktop\HotelLib_v1.0\HotelLib_v1.0\obj\Debug\net5.0\HotelLib_v1.0.dll
 C:\Users\kuluevdv\Desktop\HotelLib_v1.0\HotelLib_v1.0\obj\Debug\net5.0\ref\HotelLib_v1.0.dll
 C:\Users\kuluevdv\Desktop\HotelLib_v1.0\HotelLib_v1.0\obj\Debug\net5.0\HotelLib_v1.0.pdb
+C:\Users\KuluevDV\Desktop\repo\Hotel-v2-main\HotelLib_v1.0\HotelLib_v1.0\obj\Debug\net5.0\HotelLib_v1.0.csproj.AssemblyReference.cache
+C:\Users\KuluevDV\Desktop\repo\Hotel-v2-main\HotelLib_v1.0\HotelLib_v1.0\obj\Debug\net5.0\HotelLib_v1.0.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KuluevDV\Desktop\repo\Hotel-v2-main\HotelLib_v1.0\HotelLib_v1.0\obj\Debug\net5.0\HotelLib_v1.0.AssemblyInfoInputs.cache
+C:\Users\KuluevDV\Desktop\repo\Hotel-v2-main\HotelLib_v1.0\HotelLib_v1.0\obj\Debug\net5.0\HotelLib_v1.0.AssemblyInfo.cs
+C:\Users\KuluevDV\Desktop\repo\Hotel-v2-main\HotelLib_v1.0\HotelLib_v1.0\obj\Debug\net5.0\HotelLib_v1.0.csproj.CoreCompileInputs.cache
+C:\Users\KuluevDV\Desktop\repo\Hotel-v2-main\HotelLib_v1.0\HotelLib_v1.0\obj\Debug\net5.0\HotelLib_v1.0.dll
+C:\Users\KuluevDV\Desktop\repo\Hotel-v2-main\HotelLib_v1.0\HotelLib_v1.0\obj\Debug\net5.0\ref\HotelLib_v1.0.dll
+C:\Users\KuluevDV\Desktop\repo\Hotel-v2-main\HotelLib_v1.0\HotelLib_v1.0\obj\Debug\net5.0\HotelLib_v1.0.pdb
+C:\Users\KuluevDV\Desktop\repo\Hotel-v2-main\HotelLib_v1.0\HotelLib_v1.0\bin\Debug\net5.0\HotelLib_v1.0.deps.json
+C:\Users\KuluevDV\Desktop\repo\Hotel-v2-main\HotelLib_v1.0\HotelLib_v1.0\bin\Debug\net5.0\HotelLib_v1.0.dll
+C:\Users\KuluevDV\Desktop\repo\Hotel-v2-main\HotelLib_v1.0\HotelLib_v1.0\bin\Debug\net5.0\ref\HotelLib_v1.0.dll
+C:\Users\KuluevDV\Desktop\repo\Hotel-v2-main\HotelLib_v1.0\HotelLib_v1.0\bin\Debug\net5.0\HotelLib_v1.0.pdb

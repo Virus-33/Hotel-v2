@@ -15,13 +15,27 @@ namespace HotelLib_v1._0
         }
         public OrderList()
         {
-            orders = new();
+            this.orders = new();
         }
 
-        public void Read(string path)
+        public void Read(List<Order> temp)
         {
-            orders.Clear();
-            orders = FileWorks.RJ(path);
+            this.orders.Clear();
+            this.orders = temp;
+        }
+
+        public void RO(long num)
+        {
+            int stopper = this.orders.Count;
+
+            for (int i = 0; i < stopper; i++)
+            {
+                if (this.orders[i].phone == num)
+                {
+                    this.orders.RemoveAt(i);
+                    stopper--;
+                }
+            }
         }
     }
 }

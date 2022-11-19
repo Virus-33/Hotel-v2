@@ -1,4 +1,4 @@
-201 Standrt 1000 booked
+201 Standrt 1000 available
 
 202 Suprior 2500 available
 
@@ -14,5 +14,5 @@
 
 303 Duplex 4000 occupied
 
-304 Studio 700 booked
+304 Studio 700 available
 

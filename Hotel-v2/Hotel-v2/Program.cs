@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
 using HotelLib_v1._0;
+using FileAccess;
 using System.Collections.Generic;
-
 
 namespace Hotel_v2
 {
@@ -13,7 +13,9 @@ namespace Hotel_v2
             Console.ForegroundColor = ConsoleColor.Green;
             if (args.Length == 2 && FileWorks.CheckFile(args[0]) && FileWorks.CheckFile(args[1]))
             {
-                Hotel H = new(args[0], args[1]);
+                List<Room> temp;
+                List<Order> temp1;
+                Hotel H = new();
                 char key;
                 bool c = true;
                 
@@ -34,42 +36,49 @@ namespace Hotel_v2
                     switch (key)
                     {
                         case '1':
+                            temp = FileWorks.GetRooms(args[0]);
+                            H.RemRooms(temp);
                             MessageBlock.ShowRooms(H.GR());
                             MessageBlock.Prompt();
                             Inputs.GetChar();
                             break;
                         case '2':
+                            temp = FileWorks.GetRooms(args[0]);
+                            H.RemRooms(temp);
                             MessageBlock.BookingNum(H.GR());
                             string h = Inputs.GetNum();
-                            respond = H.Order(h);
-                            if (respond == 0)
+                            if (h != "q")
                             {
-                                MessageBlock.RE();
-                            }
-                            else if (respond == 2)
-                            {
-                                
-                            }
-                            else
-                            {
-                                while (true)
+                                int k;
+                                if (int.TryParse(h, out k))
                                 {
-                                    MessageBlock.Phone1();
-                                    string phone = Inputs.GetNum();
-                                    respond = H.Phone(phone);
+                                    respond = H.Order(k);
                                     if (respond == 0)
                                     {
-                                        MessageBlock.PhoneE();
+                                        MessageBlock.RE();
                                     }
                                     else
                                     {
-                                        MessageBlock.Phone2();
-                                        H.NewOrder(int.Parse(h), long.Parse(phone));
-                                        FileWorks.WJ(args[1], H.GO());
-                                        H.DO();
-                                        H.BookRoom(int.Parse(h));
-                                        FileWorks.WriteRooms(H.GR(), args[0]);
-                                        break;
+                                        while (true)
+                                        {
+                                            MessageBlock.Phone1();
+                                            string phone = Inputs.GetNum();
+                                            respond = Phone(phone);
+                                            if (respond == 0)
+                                            {
+                                                MessageBlock.PhoneE();
+                                            }
+                                            else
+                                            {
+                                                MessageBlock.Phone2();
+                                                H.NewOrder(int.Parse(h), long.Parse(phone));
+                                                FileWorks.WJ(args[1], H.GO());
+                                                H.BookRoom(int.Parse(h));
+                                                FileWorks.WriteRooms(H.GR(), args[0]);
+                                                Inputs.GetChar();
+                                                break;
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -77,31 +86,42 @@ namespace Hotel_v2
                         case '3':
                             while (true)
                             {
+                                temp = FileWorks.GetRooms(args[0]);
+                                H.RemRooms(temp);
                                 MessageBlock.PB();
                                 MessageBlock.QI();
                                 string Gogi = Inputs.GetNum();
-                                respond = H.Phone(Gogi);
-                                if (respond == 0)
+                                if (Gogi != "q")
                                 {
-                                    MessageBlock.PhoneE();
-                                }
-                                else if (respond == 2)
-                                {
-                                    break;
-                                }
-                                else
-                                {
-                                    bool resp = H.CancelBookingByPN(long.Parse(Gogi));
-                                    if (resp)
+                                    respond = Phone(Gogi);
+                                    if (respond == 0)
                                     {
-                                        MessageBlock.BC();
-                                        FileWorks.WJ(args[1], H.GO());
+                                        MessageBlock.PhoneE();
+                                    }
+                                    else if (respond == 2)
+                                    {
+                                        break;
                                     }
                                     else
                                     {
-                                        MessageBlock.URE();
+                                        temp1 = FileWorks.RJ(args[1]);
+                                        H.ReadJ(temp1);
+                                        bool resp = H.CancelBookingByPN(long.Parse(Gogi));
+                                        if (resp)
+                                        {
+                                            MessageBlock.BC();
+                                            FileWorks.WJ(args[1], H.GO());
+                                            FileWorks.WriteRooms(H.GR(), args[0]);
+                                        }
+                                        else
+                                        {
+                                            MessageBlock.URE();
+                                        }
+                                        Inputs.GetChar();
+                                        break;
                                     }
-                                    Inputs.GetChar();
+                                } else
+                                {
                                     break;
                                 }
                             }
@@ -118,6 +138,23 @@ namespace Hotel_v2
                 MessageBlock.FE();
                 Inputs.GetChar();
             }
+        }
+
+        public static int Phone(string num)
+        {
+            if (long.TryParse(num, out _) && !Checkphone(num))
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
+            }
+        }
+
+        static bool Checkphone(string inputs)
+        {
+            return inputs.Length == 11;
         }
     }
 }

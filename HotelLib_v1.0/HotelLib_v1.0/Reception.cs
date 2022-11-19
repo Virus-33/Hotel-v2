@@ -14,10 +14,15 @@ namespace HotelLib_v1._0
             private set;
         }
 
-        public Reception(string path)
+        public Reception()
         {
-            Rooms = FileWorks.GetRooms(path);
+            this.Rooms = new();
         }
+
+        public void FormRoomList(List<Room> temp)
+        {
+            this.Rooms = temp;
+        } 
 
         public bool CheckRoomBook(int num)
         {
@@ -27,7 +32,6 @@ namespace HotelLib_v1._0
 
         public bool Unbook(List<Order> Orders, long phone)
         {
-            int num;
             bool flag = false;
             if (Orders.Count > 0)
             {
@@ -65,7 +69,8 @@ namespace HotelLib_v1._0
                     {
                         room.Book();
                         return 1;
-                    } else
+                    }
+                    else
                     {
                         return 0;
                     }
@@ -94,7 +99,7 @@ namespace HotelLib_v1._0
         }
 
         bool CheckRoom(int num, out Room OR)
-        { 
+        {
             bool res = false;
             OR = null;
             foreach (Room room in Rooms)
@@ -113,21 +118,5 @@ namespace HotelLib_v1._0
             return res;
         }
 
-        public int Phone(long a)
-        {
-            if (!Checkphone(a))
-            {
-                return 0;
-            }
-            else
-            {
-                return 1;
-            }
-        }
-
-        bool Checkphone(long inputs)
-        {
-            return inputs.ToString().Length == 11;
-        }
     }
 }

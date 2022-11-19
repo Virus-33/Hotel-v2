@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "FileAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "HotelLib_v1.0": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FileAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FileAccess.dll": {}
+        }
+      },
       "HotelLib_v1.0/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -11,60 +24,86 @@
         "runtime": {
           "bin/placeholder/HotelLib_v1.0.dll": {}
         }
+      },
+      "Interface/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "HotelLib_v1.0": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Interface.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Interface.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "FileAccess/1.0.0": {
+      "type": "project",
+      "path": "../FileAccess/FileAccess.csproj",
+      "msbuildProject": "../FileAccess/FileAccess.csproj"
+    },
     "HotelLib_v1.0/1.0.0": {
       "type": "project",
       "path": "../../HotelLib_v1.0/HotelLib_v1.0/HotelLib_v1.0.csproj",
       "msbuildProject": "../../HotelLib_v1.0/HotelLib_v1.0/HotelLib_v1.0.csproj"
+    },
+    "Interface/1.0.0": {
+      "type": "project",
+      "path": "../Interface/Interface.csproj",
+      "msbuildProject": "../Interface/Interface.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "HotelLib_v1.0 >= 1.0.0"
+      "FileAccess >= 1.0.0",
+      "HotelLib_v1.0 >= 1.0.0",
+      "Interface >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\KuluevDV\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Professional\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\KuluevDV\\Desktop\\Hotel-v2\\Hotel-v2\\Hotel-v2.csproj",
+      "projectUniqueName": "C:\\Users\\Professional\\Desktop\\Whooshed\\repo\\Hotel-v2\\Hotel-v2\\Hotel-v2.csproj",
       "projectName": "Hotel-v2",
-      "projectPath": "C:\\Users\\KuluevDV\\Desktop\\Hotel-v2\\Hotel-v2\\Hotel-v2.csproj",
-      "packagesPath": "C:\\Users\\KuluevDV\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\KuluevDV\\Desktop\\Hotel-v2\\Hotel-v2\\obj\\",
+      "projectPath": "C:\\Users\\Professional\\Desktop\\Whooshed\\repo\\Hotel-v2\\Hotel-v2\\Hotel-v2.csproj",
+      "packagesPath": "C:\\Users\\Professional\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Professional\\Desktop\\Whooshed\\repo\\Hotel-v2\\Hotel-v2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\KuluevDV\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Professional\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://10.242.53.253:3128": {},
-        "https://10.242.53.253:3128": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\KuluevDV\\Desktop\\HotelLib_v1.0\\HotelLib_v1.0\\HotelLib_v1.0.csproj": {
-              "projectPath": "C:\\Users\\KuluevDV\\Desktop\\HotelLib_v1.0\\HotelLib_v1.0\\HotelLib_v1.0.csproj"
+            "C:\\Users\\Professional\\Desktop\\Whooshed\\repo\\Hotel-v2\\FileAccess\\FileAccess.csproj": {
+              "projectPath": "C:\\Users\\Professional\\Desktop\\Whooshed\\repo\\Hotel-v2\\FileAccess\\FileAccess.csproj"
+            },
+            "C:\\Users\\Professional\\Desktop\\Whooshed\\repo\\Hotel-v2\\Interface\\Interface.csproj": {
+              "projectPath": "C:\\Users\\Professional\\Desktop\\Whooshed\\repo\\Hotel-v2\\Interface\\Interface.csproj"
+            },
+            "C:\\Users\\Professional\\Desktop\\Whooshed\\repo\\HotelLib_v1.0\\HotelLib_v1.0\\HotelLib_v1.0.csproj": {
+              "projectPath": "C:\\Users\\Professional\\Desktop\\Whooshed\\repo\\HotelLib_v1.0\\HotelLib_v1.0\\HotelLib_v1.0.csproj"
             }
           }
         }
@@ -93,7 +132,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
